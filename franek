@@ -1,0 +1,6 @@
+def start():
+    print('googogogoo ')
+    wartosc = input()
+    print(wartosc)
+
+start()
