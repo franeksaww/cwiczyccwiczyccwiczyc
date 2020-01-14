@@ -9,7 +9,7 @@ def startGry():
     time.sleep(1)
     print('Aby zagrać musisz poprawnie wpisać jedną z opcji - papier, kamień lub nożyce.')
     time.sleep(1)
-    print('Wpisz start, gdy będziesz gootwy')
+    print('Wpisz start, gdy będziesz gotowy')
     print('Powodzenia!')
     opcja =  str(input())
     if opcja == 'start' or opcja == 'Start':
@@ -18,6 +18,22 @@ def startGry():
         print('Jeżeli chcesz zagrać wpisz poprawną wartość!')
         time.sleep(2)
         startGry()
+
+
+def jeszcze():
+    print('Chcesz zagrać jeszcze raz? (tak lub nie)')
+    gram = str(input())
+    if gram == 'tak':
+        gra()
+    elif gram == 'nie':
+        print('Do zobaczenia!')
+    else:
+        print('Wpisz tak lub nie :)')
+        jeszcze()
+
+
+
+
 
 def gra():
     print('Zaczynamy!')
@@ -28,30 +44,39 @@ def gra():
     if that == 'papier' and this == 'papier':
         print('Remis!')
         print('Ty: ' + this + '   komputer: ' + that)
+        jeszcze()
     elif that == 'papier' and this == 'kamień':
         print('Przegrałeś!')
         print('Ty: ' + this + '   komputer: ' + that)
+        jeszcze()
     elif that == 'papier' and this == 'nożyce':
         print('Wygrałeś!')
         print('Ty: ' + this + '   komputer: ' + that)
+        jeszcze()
     elif that == 'kamień' and this == 'papier':
         print('Wygrałeś!')
         print('Ty: ' + this + '   komputer: ' + that)
+        jeszcze()
     elif that == 'kamień' and this == 'kamień':
         print('Remis!')
         print('Ty: ' + this + '   komputer: ' + that)
+        jeszcze()
     elif that == 'kamień' and this == 'nożyce':
         print('Przegrałeś!')
         print('Ty: ' + this + '   komputer: ' + that)
+        jeszcze()
     elif that == 'nożyce' and this == 'papier':
         print('Przegrałeś!')
         print('Ty: ' + this + '   komputer: ' + that)
+        jeszcze()
     elif that == 'nożyce' and this == 'nożyce':
         print('Remis!')
         print('Ty: ' + this + '   komputer: ' + that)
+        jeszcze()
     elif that == 'nożyce' and this == 'kamień':
         print('Wygrałeś!')
         print('Ty: ' + this + '   komputer: ' + that)
+        jeszcze()
 
     else:
         print('Coś poszło nie tak :/')
