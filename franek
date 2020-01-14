@@ -1,6 +1,66 @@
-def start():
-    print('googogogoo ')
-    wartosc = input()
-    print(wartosc)
+import random
+import time
 
-start()
+OPCJE = ['papier', 'kamień', 'nożyce']
+
+def startGry():
+    print('---PAPIER NOŻYCE KAMIEŃ---')
+    print('W tej grze zmierzysz się z komputerem w jedną z popularniejszych gier.')
+    time.sleep(1)
+    print('Aby zagrać musisz poprawnie wpisać jedną z opcji - papier, kamień lub nożyce.')
+    time.sleep(1)
+    print('Wpisz start, gdy będziesz gootwy')
+    print('Powodzenia!')
+    opcja =  str(input())
+    if opcja == 'start' or opcja == 'Start':
+        gra()
+    else:
+        print('Jeżeli chcesz zagrać wpisz poprawną wartość!')
+        time.sleep(2)
+        startGry()
+
+
+def gra():
+    print('Zaczynamy!')
+    time.sleep(1)
+    print('Podaj swój wybór:')
+    this = str(input())
+    that = random.randint(OPCJE)
+    if that == 'papier' and this == 'papier':
+        print('Remis!')
+        print('Ty: ' + this + '   komputer: ' + that)
+    elif that == 'papier' and this == 'kamień':
+        print('Przegrałeś!')
+        print('Ty: ' + this + '   komputer: ' + that)
+    elif that == 'papier' and this == 'nożyce':
+        print('Wygrałeś!')
+        print('Ty: ' + this + '   komputer: ' + that)
+    elif that == 'kamień' and this == 'papier':
+        print('Wygrałeś!')
+        print('Ty: ' + this + '   komputer: ' + that)
+    elif that == 'kamień' and this == 'kamień':
+        print('Remis!')
+        print('Ty: ' + this + '   komputer: ' + that)
+    elif that == 'kamień' and this == 'nożyce':
+        print('Przegrałeś!')
+        print('Ty: ' + this + '   komputer: ' + that)
+    elif that == 'nożyce' and this == 'papier':
+        print('Przegrałeś!')
+        print('Ty: ' + this + '   komputer: ' + that)
+    elif that == 'nożyce' and this == 'nożyce':
+        print('Remis!')
+        print('Ty: ' + this + '   komputer: ' + that)
+    elif that == 'nożyce' and this == 'kamień':
+        print('Wygrałeś!')
+        print('Ty: ' + this + '   komputer: ' + that)
+    else:
+        print('Coś poszło nie tak :/')
+
+    startGry()
+
+
+
+
+
+
+
