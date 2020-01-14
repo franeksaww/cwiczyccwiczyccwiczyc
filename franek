@@ -19,13 +19,12 @@ def startGry():
         time.sleep(2)
         startGry()
 
-
 def gra():
     print('Zaczynamy!')
     time.sleep(1)
     print('Podaj swój wybór:')
     this = str(input())
-    that = random.randint(OPCJE)
+    that = random.choice(OPCJE)
     if that == 'papier' and this == 'papier':
         print('Remis!')
         print('Ty: ' + this + '   komputer: ' + that)
@@ -53,10 +52,12 @@ def gra():
     elif that == 'nożyce' and this == 'kamień':
         print('Wygrałeś!')
         print('Ty: ' + this + '   komputer: ' + that)
+
     else:
         print('Coś poszło nie tak :/')
 
-    startGry()
+
+startGry()
 
 
 
